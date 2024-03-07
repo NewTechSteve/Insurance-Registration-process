@@ -1,0 +1,45 @@
+/* styles.css */
+
+input:invalid {
+    border: 2px solid red;
+}
+input:valid {
+    border: 1px solid black;
+}
+.error-message {
+    display: none;
+    color: red;
+    font-size: 0.8em;
+}
+input:invalid + .error-message {
+    display: block;
+}
+.required::after {
+    content: " *";
+    color: red;
+}
+
+.container {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+.collapsible {
+    cursor: pointer;
+}
+.content {
+    display: none;
+    padding: 10px;
+}
+.content.show {
+    display: block;
+}
+.error {
+    color: red;
+    font-size: 0.8em;
+}
+button {
+    margin-top: 20px;
+    background-color: blue;
+}

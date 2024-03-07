@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insurance Registration Process</title>
+    <style>
+        .container {
+            display: none;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+        .container.open {
+            display: block;
+        }
+        .dropdown {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="dropdown" onclick="toggleDropdown()">▼</div>
+    
+    <div id="bio-data" class="container open">
+        <h2>Bio Data</h2>
+        <form id="personal-info-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required><br>
+            <label for="address">Address:</label>
+            <input type="text" id="address" name="address" required><br>
+            <label for="contact">Contact:</label>
+            <input type="text" id="contact" name="contact" required><br>
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" name="dob" required><br>
+            <label for="id-doc">Upload ID Document:</label>
+            <input type="file" id="id-doc" name="id-doc" accept="image/*,.pdf" required><br>
+            <button type="submit">Next</button>
+        </form>
+    </div>
+
+    <div id="insurance-details" class="container">
+        <h2>Insurance Details</h2>
+        <form id="insurance-details-form">
+            <label for="insurance-type">Insurance Type:</label>
+            <select id="insurance-type" name="insurance-type" required>
+                <option value="health">Health</option>
+                <option value="life">Life</option>
+                <option value="auto">Auto</option>
+            </select><br>
+            <label for="coverage-amount">Coverage Amount:</label>
+            <input type="text" id="coverage-amount" name="coverage-amount" required><br>
+            <label for="deductible">Deductible:</label>
+            <input type="text" id="deductible" name="deductible" required><br>
+            <label for="term-length">Term Length:</label>
+            <input type="text" id="term-length" name="term-length" required><br>
+            <button type="submit">Next</button>
+        </form>
+    </div>
+
+    <div id="risk-assessment" class="container">
+        <h2>Risk Assessment</h2>
+        <form id="risk-assessment-form">
+            <label for="health-factors">Health Factors:</label>
+            <textarea id="health-factors" name="health-factors" required></textarea><br>
+            <label for="lifestyle-factors">Lifestyle Factors:</label>
+            <textarea id="lifestyle-factors" name="lifestyle-factors" required></textarea><br>
+            <button type="submit">Next</button>
+        </form>
+    </div>
+
+    <div id="policy-summary" class="container">
+        <h2>Policy Summary</h2>
+        <div id="policy-summary-content">
+            <!-- Summary details will be dynamically populated here -->
+        </div>
+    </div>
+
+    <script>
+        function toggleDropdown() {
+            var containers = document.querySelectorAll('.container');
+            containers.forEach(container => {
+                container.classList.toggle('open');
+            });
+        }
+    </script>
+</body>
+</html>

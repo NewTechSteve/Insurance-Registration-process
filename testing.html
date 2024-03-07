@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insurance Registration Process</title>
+    <style>
+        .container {
+            border: 1px solid #4eaad8;
+            border-radius: 5px;
+            padding: 10px;
+            margin-bottom: 20px;
+            align-content: center;
+        }
+        .contner{
+            display: block;
+            border: 1px solid violet;
+            padding-bottom: 50px;
+            padding-left: 10px;
+            padding-right: 10px;
+            padding-top: 10px;
+            border-radius: 5px;
+        }
+        .collapsible {
+            cursor: pointer;
+        }
+        .content {
+            display: none;
+            padding: 10px;
+        }
+        button {
+            background-color: blue;
+            color: #fff;
+            text-align: center;
+            font-size: 20px;
+            padding: 10px;
+            border: blueviolet;
+            float: right;
+            width: 100px;
+            margin-top: 5px;
+            margin-right: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .bttn {
+            display: block;
+        }
+      
+          button:hover {
+            background-color: blueviolet;
+          }
+        .content.show {
+            display: block;
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="contner">
+        <h1>New User Registration</h1>
+        <div class="container">
+            <h2 class="collapsible" onclick="toggleSection('bio-data')">Bio Data ˅</h2>
+            <div id="bio-data" class="content show">
+                <form id="personal-info-form">
+                    <label for="name">Surname Name: - </label>
+                    <input type="text" id="name" name="name" required><br>
+                    <label for="address">First Name: - </label>
+                    <input type="text" id="address" name="address" required><br>
+                    <label for="contact">Middle Name: - </label>
+                    <input type="text" id="contact" name="contact" required><br>
+                    <label for="address">Nationality: - </label>
+                    <input type="text" id="address" name="address" required><br>
+                    <label for="address">ID No. / Passport No: - </label>
+                    <input type="text" id="address" name="address" required><br>
+                    <label for="dob">Date of Birth: - </label>
+                    <input type="date" id="dob" name="dob" required><br>
+                    <label for="id-doc">Upload ID-Front Document: - </label>
+                    <input type="file" id="id-doc" name="id-doc" accept="image/*,.pdf" required><br>
+                    <label for="id-doc">Upload ID-Back Document: - </label>
+                    <input type="file" id="id-doc" name="id-doc" accept="image/*,.pdf" required><br>
+                    
+                </form>
+            </div>
+        </div>
+
+        <div class="container">
+            <h2 class="collapsible" onclick="toggleSection('insurance-details')">Address ˅</h2>
+            <div id="insurance-details" class="content">
+                <form id="insurance-details-form">
+                    <label for="insurance-type">Country/Territory:</label>
+                    <select id="insurance-type" name="insurance-type" required>
+                        <option value="health">Kenyan</option>
+                        <option value="life">Tanzania</option>
+                        <option value="auto">Uganda</option>
+                    </select><br>
+                    <label for="coverage-amount">Address Line 1: - </label>
+                    <input type="text" id="coverage-amount" name="coverage-amount" required><br>
+                    <label for="deductible">Address Line 2: - </label>
+                    <input type="text" id="deductible" name="deductible" required><br>
+                    <label for="term-length">City: - </label>
+                    <input type="text" id="term-length" name="term-length" required><br>
+                    <label for="deductible">Postal Code: - </label>
+                    <input type="text" id="deductible" name="deductible" required><br>
+                </form>
+            </div>
+        </div>
+
+        <div class="container">
+            <h2 class="collapsible" onclick="toggleSection('risk-assessment')">Contacts</h2>
+            <div id="risk-assessment" class="content">
+                <form id="risk-assessment-form">
+                    <label for="deductible">Phone No 1. (Main): - </label>
+                    <input type="text" id="deductible" name="deductible" required><br>
+                    <label for="deductible">Phone No 2. (Optional): - </label>
+                    <input type="text" id="deductible" name="deductible" required><br>
+                    <label for="deductible">Email: - </label>
+                    <input type="text" id="deductible" name="deductible" required><br>
+                    <label for="deductible">Emergancy Contact: - </label>
+                    <input type="text" id="deductible" name="deductible" required><br>
+                    <label for="deductible">Emergency Email: - </label>
+                    <input type="text" id="deductible" name="deductible" required><br>
+                </form>
+            </div>
+            
+        </div>
+        
+        <div class="bttn">
+            <button type="button" onclick="nextPage('content', 'insurance_details.html')">Next</button>
+        </div>
+        
+    
+    </div>
+
+    <script>
+        function toggleSection(sectionId) {
+            var section = document.getElementById(sectionId);
+            if (section.style.display === "block") {
+                section.style.display = "none";
+            } else {
+                section.style.display = "block";
+            }
+        }
+
+        // Open the "Bio Data" section by default
+        document.getElementById('bio-data').style.display = 'block';
+    </script>
+</body>
+</html>

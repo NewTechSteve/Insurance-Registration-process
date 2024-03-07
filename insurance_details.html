@@ -1,0 +1,17 @@
+<h2>Insurance Details</h2>
+<form id="insurance-details-form">
+    <label for="insurance-type">Insurance Type:</label>
+    <select id="insurance-type" name="insurance-type" required>
+        <option value="health">Health</option>
+        <option value="life">Life</option>
+        <option value="auto">Auto</option>
+    </select><br>
+    <label for="coverage-amount">Coverage Amount:</label>
+    <input type="text" id="coverage-amount" name="coverage-amount" required><br>
+    <label for="deductible">Deductible:</label>
+    <input type="text" id="deductible" name="deductible" required><br>
+    <label for="term-length">Term Length:</label>
+    <input type="text" id="term-length" name="term-length" required><br>
+    <button type="button" onclick="prevPage('content', 'bio_data.html')">Previous</button>
+    <button type="button" onclick="nextPage('content', 'risk_assessment.html')">Next</button>
+</form>
